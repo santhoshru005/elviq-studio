@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="800" height="320">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="100%" stop-color="#08080a"/>
+    </linearGradient>
+
+    <!-- Logo Orange/Yellow Gradient -->
+    <linearGradient id="e-orange-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff4500"/>
+      <stop offset="40%" stop-color="#ff8c00"/>
+      <stop offset="80%" stop-color="#ffba00"/>
+      <stop offset="100%" stop-color="#ffde00"/>
+    </linearGradient>
+
+    <!-- Metallic Gradient -->
+    <linearGradient id="e-metal-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="45%" stop-color="#d0d0d8"/>
+      <stop offset="100%" stop-color="#555560"/>
+    </linearGradient>
+
+    <!-- Text Orange Gradient -->
+    <linearGradient id="text-iq-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff8c00"/>
+      <stop offset="60%" stop-color="#ffab00"/>
+      <stop offset="100%" stop-color="#ffd000"/>
+    </linearGradient>
+
+    <!-- Glow Effect -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#bg-grad)" rx="20"/>
+
+  <g transform="translate(60, 60)">
+    <!-- Symbol: E Ribbon + Arrow -->
+    <g transform="translate(0, 15)">
+      <!-- Bottom Arm (Metallic) -->
+      <path d="M 15 135 C 15 105 35 105 60 105 L 115 105 C 130 105 140 115 130 130 C 122 138 108 138 90 138 Z" fill="url(#e-metal-grad)"/>
+      <!-- Middle Arm (Metallic) -->
+      <path d="M 22 75 C 22 75 35 75 60 75 L 105 75 C 118 75 125 83 118 93 C 110 99 98 99 85 99 L 25 99 Z" fill="url(#e-metal-grad)"/>
+      <!-- Top Arrow Ribbon (Orange/Yellow Gradient) -->
+      <path d="M 15 95 C 12 55 35 20 85 20 L 135 20 L 122 40 L 165 40 L 190 8 L 145 8 L 155 20 L 85 20 C 50 20 38 45 38 75 Z" fill="url(#e-orange-grad)" filter="url(#glow)"/>
+      <polygon points="140,8 190,8 165,40" fill="#ffe000"/>
+    </g>
+
+    <!-- Text: Eleviq -->
+    <g transform="translate(220, 125)">
+      <!-- ELEV in white -->
+      <text x="0" y="0" font-family="'Inter', 'SF Pro Display', system-ui, sans-serif" font-weight="800" font-size="110" fill="#ffffff" letter-spacing="-2">Elev</text>
+      <!-- IQ in orange gradient -->
+      <text x="230" y="0" font-family="'Inter', 'SF Pro Display', system-ui, sans-serif" font-weight="800" font-size="110" fill="url(#text-iq-grad)" letter-spacing="-2">iq</text>
+      <!-- Tagline -->
+      <text x="5" y="48" font-family="'Inter', 'SF Pro Text', system-ui, sans-serif" font-weight="700" font-size="21" fill="#a0a0aa" letter-spacing="9.5">ELEVATE WITH <tspan fill="#ff9900">INTELLIGENCE</tspan></text>
+    </g>
+  </g>
+</svg>
