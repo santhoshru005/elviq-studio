@@ -284,15 +284,18 @@ button{font:inherit;cursor:none;border:none;background:none;color:inherit}
 .project-media{
   position:relative;border-radius:var(--radius-lg);overflow:hidden;
   border:1px solid var(--border);background:#0d0d15;
-  aspect-ratio: 16/10;
+  aspect-ratio: 16/9;
+  cursor:pointer;
+  user-select:none;
   transition:transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s;
   box-shadow:0 30px 80px -30px rgba(0,0,0,.6);
 }
 .project-media:hover{box-shadow:0 40px 100px -20px var(--accent-glow), 0 30px 80px -30px rgba(0,0,0,.7)}
-.slides{display:flex;width:100%;height:100%;transition:transform .7s cubic-bezier(.7,0,.2,1)}
-.slides img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;object-position:top center}
+.slides{display:flex;width:100%;height:100%;transition:transform .8s cubic-bezier(.25,1,.5,1)}
+.slides img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
 .slider-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:3}
-.slider-dots span{width:22px;height:3px;background:rgba(255,255,255,.25);border-radius:3px;transition:background .3s,width .3s}
+.slider-dots span{width:22px;height:4px;background:rgba(255,255,255,.3);border-radius:4px;cursor:pointer;transition:background .3s,width .3s}
+.slider-dots span:hover{background:rgba(255,255,255,.75)}
 .slider-dots span.active{background:var(--accent);width:36px}
 .tilt-glow{position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(400px circle at var(--x,50%) var(--y,50%), rgba(255,138,30,.15), transparent 60%);

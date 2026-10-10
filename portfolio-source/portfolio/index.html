@@ -462,18 +462,29 @@
       slides.style.transform = `translate3d(-${index * 100}%, 0, 0)`;
       dots.forEach((dot, dotIndex) => dot.classList.toggle('active', dotIndex === index));
     };
-    if (!coarsePointer && !reducedMotion) {
-      slider.addEventListener('pointermove', (event) => {
-        const rect = slider.getBoundingClientRect();
-        const ratio = (event.clientX - rect.left) / rect.width;
-        const target = Math.min(images.length - 1, Math.floor(ratio * images.length));
-        if (target !== index) go(target);
-      }, { passive: true });
+
+    // Click on the image to go to the next slide
+    slider.addEventListener('click', () => {
+      go(index + 1);
+    });
+
+    // Click on individual dots to jump to that slide
+    dots.forEach((dot, dotIndex) => {
+      dot.addEventListener('click', (e) => {
+        e.stopPropagation();
+        go(dotIndex);
+      });
+    });
+
+    // Slow, smooth slide progression on hover
+    if (!reducedMotion) {
       slider.addEventListener('mouseenter', () => {
         window.clearInterval(autoTimer);
-        autoTimer = window.setInterval(() => go(index + 1), 2600);
+        autoTimer = window.setInterval(() => go(index + 1), 3200);
       });
-      slider.addEventListener('mouseleave', () => window.clearInterval(autoTimer));
+      slider.addEventListener('mouseleave', () => {
+        window.clearInterval(autoTimer);
+      });
     }
   });
 
